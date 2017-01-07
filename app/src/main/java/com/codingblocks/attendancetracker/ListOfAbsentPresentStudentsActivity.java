@@ -30,6 +30,8 @@ public class ListOfAbsentPresentStudentsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_of_absent_present_students);
 
+        FontsOverride.applyFontForToolbarTitle(this, FontsOverride.FONT_PROXIMA_NOVA,getWindow());
+
         Intent intent = getIntent();
         fetchStudents(intent);
         init();
