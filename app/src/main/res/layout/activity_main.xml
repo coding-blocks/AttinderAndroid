@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
@@ -13,18 +14,23 @@
     tools:context="com.codingblocks.attendancetracker.MainActivity">
 
     <TextView
-        android:textAppearance="@style/Base.TextAppearance.AppCompat.Title"
-        android:layout_gravity="center"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Swipe right for present and left for absent" />
+        android:layout_gravity="center"
+        android:text="Swipe right for present and left for absent"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Title" />
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
     <com.piotrek.customspinner.CustomSpinner
         android:id="@+id/spinner_batch"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"></com.piotrek.customspinner.CustomSpinner>
+        android:layout_marginTop="20dp" />
+
+    </LinearLayout>
 
     <com.daprlabs.cardstack.SwipeFrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:swipedeck="http://schemas.android.com/apk/res-auto"
@@ -35,9 +41,9 @@
 
         <com.daprlabs.cardstack.SwipeDeck
             android:id="@+id/swipe_deck"
-            android:layout_gravity="center"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:padding="20dp"
             swipedeck:card_gravity="top"
             swipedeck:card_spacing="10dp"
@@ -46,5 +52,13 @@
             swipedeck:rotation_degrees="10" />
 
     </com.daprlabs.cardstack.SwipeFrameLayout>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/create_course_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:src="@drawable/ic_add"
+        app:fabSize="normal" />
 
 </LinearLayout>

@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Attendance Tracker</string>
+    <string name="create_batch">create a new batch!</string>
 </resources>
