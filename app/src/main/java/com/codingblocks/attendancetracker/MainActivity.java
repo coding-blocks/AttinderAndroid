@@ -4,33 +4,33 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.codingblocks.attendancetracker.models.Batch;
 import com.codingblocks.attendancetracker.models.Student;
 import com.daprlabs.cardstack.SwipeDeck;
 import com.piotrek.customspinner.CustomSpinner;
 
-
 import java.util.ArrayList;
 
 
 public class MainActivity extends AppCompatActivity {
 
-    public static final String TAG = "MainAct";
+    public static final String TAG = MainActivity.class.getSimpleName();
 
     private SwipeDeck cardStack;
+    private FloatingActionButton coursebutton;
 
     private String selectedBatch;
     private MyAdapter myAdapter;
@@ -45,6 +45,12 @@ public class MainActivity extends AppCompatActivity {
     private Handler handler;
 
     private CustomSpinner spinner;
+    private Runnable run = new Runnable() {
+        @Override
+        public void run() {
+            background.setBackgroundColor(Color.WHITE);
+        }
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,6 +72,14 @@ public class MainActivity extends AppCompatActivity {
         cardStack = (SwipeDeck) findViewById(R.id.swipe_deck);
         background = (LinearLayout) findViewById(R.id.activity_main);
         spinner = (CustomSpinner) findViewById(R.id.spinner_batch);
+        coursebutton = (FloatingActionButton) findViewById(R.id.create_course_button);
+        coursebutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //TODO: create a DB table for this course
+                Toast.makeText(getApplicationContext(), R.string.create_batch, Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     private void initSpinnerAdapter() {
@@ -188,14 +202,6 @@ public class MainActivity extends AppCompatActivity {
 
         }
     }
-
-
-    private Runnable run = new Runnable() {
-        @Override
-        public void run() {
-            background.setBackgroundColor(Color.WHITE);
-        }
-    };
 
     private class StudentViewHolder {
         TextView tv_name;
