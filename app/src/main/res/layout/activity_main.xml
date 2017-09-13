@@ -17,7 +17,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="Swipe right for present and left for absent"
+        android:text="@string/swipe_left_present_right_absent"
         android:textAppearance="@style/Base.TextAppearance.AppCompat.Title" />
 
     <LinearLayout

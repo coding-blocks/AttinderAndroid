@@ -25,14 +25,14 @@
             android:id="@+id/tv_studentName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Piyush"
+            android:text="@string/student_name"
             android:textAppearance="@style/Base.TextAppearance.AppCompat.Large" />
 
         <TextView
             android:id="@+id/tv_batchName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Crux" />
+            android:text="@string/batch_name" />
 
 
     </LinearLayout>
