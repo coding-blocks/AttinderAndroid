@@ -23,7 +23,7 @@
                 android:id="@+id/list_item_student_names"
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
-                android:text="Piyush"
+                android:text="@string/student_name"
                 android:textAppearance="@style/Base.TextAppearance.AppCompat.Large" />
         </LinearLayout>
 

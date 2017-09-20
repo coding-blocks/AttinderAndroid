@@ -73,7 +73,7 @@ public class ListOfAbsentPresentStudentsActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //TODO: Save attendance online.
-                Toast.makeText(ListOfAbsentPresentStudentsActivity.this, "Today's Attendance is saved.", Toast.LENGTH_SHORT).show();
+                Toast.makeText(ListOfAbsentPresentStudentsActivity.this, R.string.toast_attendance_is_saved, Toast.LENGTH_SHORT).show();
             }
         });
 
